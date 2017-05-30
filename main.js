@@ -2,7 +2,7 @@ var inputName = document.querySelector(".searchName");
 
 var button = document.querySelector(".btn-go");
 
-var name = document.querySelector("#nom");
+var userName = document.querySelector("#nom");
 var repo = document.querySelector("#repositories");
 var photo = document.querySelector("#photo");
 
@@ -15,7 +15,7 @@ function search () {
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       var data = JSON.parse(request.responseText);
-      name.innerHTML = data.name;
+      userName.innerHTML = data.name;
       repo.innerHTML = data.public_repos;
       photo.innerHTML = '<img src= "'+ data.avatar_url +'">';
     } else {
